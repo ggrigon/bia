@@ -46,13 +46,13 @@ Remover os blocos de **Frontend** e **Cache** do componente `VersaoPage.jsx`, ma
 
 ## Critérios de Aceite
 
-- [ ] O bloco "Frontend" (`apiVersion.cliente`) não é mais exibido na tela.
-- [ ] O bloco "Cache" (`cacheConfig`) não é mais exibido na tela.
-- [ ] O bloco de Status da API continua exibindo: nome, versão, status, ambiente e URL da API.
-- [ ] O bloco de erro continua aparecendo quando a API está offline.
-- [ ] O botão "Atualizar" continua funcionando normalmente.
-- [ ] A lógica de buscar `/api/cache-config` pode ser removida, já que o dado não é mais exibido.
-- [ ] O estado `cacheConfig` e a chamada fetch para cache podem ser removidos para limpeza do código.
+- [x] O bloco "Frontend" (`apiVersion.cliente`) não é mais exibido na tela.
+- [x] O bloco "Cache" (`cacheConfig`) não é mais exibido na tela.
+- [x] O bloco de Status da API continua exibindo: nome, versão, status, ambiente e URL da API.
+- [x] O bloco de erro continua aparecendo quando a API está offline.
+- [x] O botão "Atualizar" continua funcionando normalmente.
+- [x] A lógica de buscar `/api/cache-config` pode ser removida, já que o dado não é mais exibido.
+- [x] O estado `cacheConfig` e a chamada fetch para cache podem ser removidos para limpeza do código.
 
 ---
 
