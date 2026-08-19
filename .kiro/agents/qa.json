@@ -1,0 +1,20 @@
+{
+  "$schema": "",
+  "name": "qa",
+  "description": "",
+  "prompt": null,
+  "welcomeMessage": null,
+  "tools": [],
+  "toolAliases": {},
+  "toolsSettings": null,
+  "toolSchema": null,
+  "mcpServers": {},
+  "useLegacyMcpJson": false,
+  "resources": [
+    "file://AmazonQ.md",
+    "file://README.md",
+    "file://.kiro/rules/**/*.md"
+  ],
+  "allowedTools": [],
+  "model": null
+}
