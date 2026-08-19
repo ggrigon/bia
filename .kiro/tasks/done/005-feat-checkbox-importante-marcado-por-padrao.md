@@ -37,10 +37,10 @@ Alterar o componente `AddTask.jsx` para que o checkbox "Importante" esteja marca
 
 ## Critérios de Aceite
 
-- [ ] Ao abrir o formulário de adicionar tarefa, o checkbox "Importante" deve estar marcado por padrão.
-- [ ] Após submeter uma nova tarefa com sucesso, o formulário deve ser resetado com o checkbox "Importante" marcado novamente (não desmarcado).
-- [ ] O comportamento do checkbox continua funcionando normalmente (o usuário pode desmarcar antes de submeter).
-- [ ] Nenhuma outra funcionalidade do formulário é afetada.
+- [x] Ao abrir o formulário de adicionar tarefa, o checkbox "Importante" deve estar marcado por padrão.
+- [x] Após submeter uma nova tarefa com sucesso, o formulário deve ser resetado com o checkbox "Importante" marcado novamente (não desmarcado).
+- [x] O comportamento do checkbox continua funcionando normalmente (o usuário pode desmarcar antes de submeter).
+- [x] Nenhuma outra funcionalidade do formulário é afetada.
 
 ---
 
