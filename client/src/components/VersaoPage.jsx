@@ -138,6 +138,10 @@ const VersaoPage = () => {
             <strong>URL da API:</strong>{' '}
             <code style={{ fontSize: '0.85rem' }}>{apiUrl}</code>
           </div>
+          <div>
+            <strong>User Agent:</strong>{' '}
+            <span style={{ fontSize: '0.85rem' }}>{navigator.userAgent}</span>
+          </div>
         </div>
       </div>
 
