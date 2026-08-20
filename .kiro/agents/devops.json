@@ -1,20 +1,53 @@
 {
-  "$schema": "",
   "name": "devops",
-  "description": "",
-  "prompt": null,
-  "welcomeMessage": null,
-  "tools": [],
+  "description": "Agente DevOps responsável por infraestrutura, CI/CD, Docker, deploy na AWS (ECS, ECR, CloudFormation), monitoramento e automação de pipelines.",
+  "prompt": "Você é um engenheiro DevOps especializado em AWS, Docker, CI/CD e infraestrutura como código. Sua função é configurar e manter pipelines de deploy, gerenciar containers, configurar serviços AWS (ECS, ECR, CloudFormation, CodeBuild, CodePipeline), monitorar aplicações e garantir alta disponibilidade. Você segue boas práticas de segurança, automação e observabilidade.",
+  "tools": [
+    "*"
+  ],
   "toolAliases": {},
-  "toolsSettings": null,
-  "toolSchema": null,
-  "mcpServers": {},
+  "mcpServers": {
+  "aws-mcp": {
+    "command": "uvx",
+    "args": [
+      "mcp-proxy-for-aws@latest",
+      "https://aws-mcp.us-east-1.api.aws/mcp",
+      "--metadata",
+      "AWS_REGION=us-east-1"
+    ],
+    "env": {
+      "AWS_PROFILE": "formacaoaws"
+    }
+  }
+},
   "useLegacyMcpJson": false,
   "resources": [
     "file://AmazonQ.md",
     "file://README.md",
     "file://.kiro/rules/**/*.md"
   ],
-  "allowedTools": [],
-  "model": null
+  "allowedTools": [
+    "read",
+    "write",
+    "shell",
+    "grep",
+    "glob",
+    "code"
+  ],
+  "permissions": {
+    "rules": [
+      {
+        "capability": "fs_read",
+        "effect": "allow"
+      },
+      {
+        "capability": "fs_write",
+        "effect": "allow"
+      },
+      {
+        "capability": "shell",
+        "effect": "allow"
+      }
+    ]
+  }
 }

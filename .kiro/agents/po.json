@@ -1,21 +1,54 @@
 {
-  "$schema": "",
   "name": "po",
-  "description": "Esse será o papel responsável por criar as tarefas, dar um aceite final e abrir pr quando estiver concluida.",
+  "description": "Responsável por criar tarefas, dar aceite final e abrir PR quando concluída.",
   "prompt": "Você é um Product Owner (PO) responsável por criar tarefas, dar um aceite final e abrir pull requests quando as tarefas estiverem concluídas. Sua função é garantir que as tarefas estejam bem definidas, priorizadas e prontas para serem implementadas pela equipe de desenvolvimento. Você deve revisar o trabalho concluído, fornecer feedback e aprovar ou rejeitar as tarefas com base na qualidade e nos critérios estabelecidos.",
-  "welcomeMessage": null,
-  "tools": [ "*" ],
-  "toolAliases": {},
-  "toolsSettings": null,
-  "toolSchema": null,
+  "tools": [
+    "glob",
+    "grep",
+    "read",
+    "shell",
+    "write"
+  ],
   "mcpServers": {},
-  "useLegacyMcpJson": false,
   "resources": [
     "file://AmazonQ.md",
     "file://README.md",
     "file://.kiro/rules/**/*.md",
     "file://.kiro/agents/po/**/*.md"
   ],
-  "allowedTools": [ "write"],
-  "model": null
+  "permissions": {
+    "rules": [
+      {
+        "capability": "fs_write",
+        "match": [".kiro/**"],
+        "effect": "allow"
+      },
+      {
+        "capability": "fs_read",
+        "effect": "allow"
+      },
+      {
+        "capability": "shell",
+        "match": [
+          "git status",
+          "git diff*",
+          "git log*",
+          "git branch*",
+          "git checkout*",
+          "git add*",
+          "git commit*",
+          "git mv*",
+          "git push*",
+          "gh pr*",
+          "gh auth*"
+        ],
+        "effect": "allow"
+      },
+      {
+        "capability": "shell",
+        "match": ["*"],
+        "effect": "deny"
+      }
+    ]
+  }
 }

@@ -1,20 +1,45 @@
 {
-  "$schema": "",
   "name": "qa",
-  "description": "",
-  "prompt": null,
-  "welcomeMessage": null,
-  "tools": [],
+  "description": "Agente de Quality Assurance responsável por testes, validação de funcionalidades, revisão de código e garantia de qualidade do projeto.",
+  "prompt": "Você é um engenheiro de QA especializado em testes de software. Sua função é escrever e executar testes unitários, de integração e end-to-end, validar funcionalidades implementadas, identificar bugs, revisar código quanto a boas práticas e garantir que o software atenda aos critérios de aceitação definidos pelo PO. Você utiliza ferramentas como Jest, Mocha, Cypress ou similares conforme o projeto.",
+  "tools": [
+    "*"
+  ],
   "toolAliases": {},
-  "toolsSettings": null,
-  "toolSchema": null,
-  "mcpServers": {},
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest", "--browser", "chromium"]
+    }
+  },
   "useLegacyMcpJson": false,
   "resources": [
     "file://AmazonQ.md",
     "file://README.md",
     "file://.kiro/rules/**/*.md"
   ],
-  "allowedTools": [],
-  "model": null
+  "allowedTools": [
+    "read",
+    "write",
+    "shell",
+    "grep",
+    "glob",
+    "code"
+  ],
+  "permissions": {
+    "rules": [
+      {
+        "capability": "fs_read",
+        "effect": "allow"
+      },
+      {
+        "capability": "fs_write",
+        "effect": "allow"
+      },
+      {
+        "capability": "shell",
+        "effect": "allow"
+      }
+    ]
+  }
 }
