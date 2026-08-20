@@ -7,14 +7,15 @@
 
 - **Modelo:** Feature Branch
 - **Branch base:** `desafio-labs/kiro-cli`
-- **Branch da task:** `007-feat-botao-api-padrao-e-voltar-versao` (já existe, criado na primeira
-  tentativa — continue usando o mesmo branch, não crie um novo)
+- **Branch da task:** `feature/007-feat-botao-api-padrao-e-voltar-versao` (já existe, criado na
+  primeira tentativa e renomeado depois para seguir o padrão `feature/` — continue usando o mesmo
+  branch, não crie um novo)
 - **Agente responsável:** `dev`
 
 ### Instruções de início obrigatórias
 
-1. Confirmar que está no branch `007-feat-botao-api-padrao-e-voltar-versao`. Caso contrário,
-   fazer checkout desse branch antes de iniciar (não criar um branch novo).
+1. Confirmar que está no branch `feature/007-feat-botao-api-padrao-e-voltar-versao`. Caso
+   contrário, fazer checkout desse branch antes de iniciar (não criar um branch novo).
 2. Ler a seção **"Correção obrigatória antes de reimplementar"** abaixo e executá-la **antes** de
    qualquer nova implementação.
 
@@ -212,7 +213,7 @@ fundidos** em um único componente/botão.
 2. Aplicar as alterações descritas em `Header.jsx` (e, se optar por extrair, um novo componente
    próprio para o botão "API"), preservando `App.jsx` e `VersaoPage.jsx` como já estão.
 3. Validar todos os critérios de aceite.
-4. Fazer commit das alterações no branch `007-feat-botao-api-padrao-e-voltar-versao`.
+4. Fazer commit das alterações no branch `feature/007-feat-botao-api-padrao-e-voltar-versao`.
 5. Abrir PR apontando para `desafio-labs/kiro-cli` com título claro e descrição resumida,
    explicando que esta é uma correção de escopo em cima da entrega anterior.
 6. Notificar o PO para aceite final.
