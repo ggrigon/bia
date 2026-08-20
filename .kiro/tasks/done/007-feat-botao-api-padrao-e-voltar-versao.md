@@ -69,35 +69,35 @@ já que essa ligação nunca foi finalizada.
 ## Critérios de Aceite
 
 ### Botão "API" com padrão visual consistente
-- [ ] O botão "API" exibido na página principal usa o mesmo padrão visual dos demais botões da aplicação
+- [x] O botão "API" exibido na página principal usa o mesmo padrão visual dos demais botões da aplicação
       (classe `.btn`: fundo com cor de destaque, texto branco, `padding`/`border-radius` iguais aos outros
       botões), deixando de ser o círculo pequeno atual (`.version-trigger`).
-- [ ] O botão exibe o texto "API" (pode manter um ícone/emoji de status ao lado, ex: 🟢 API, 🔴 API, para não
+- [x] O botão exibe o texto "API" (pode manter um ícone/emoji de status ao lado, ex: 🟢 API, 🔴 API, para não
       perder a informação de status online/offline/verificando que já existia).
-- [ ] Ao clicar no botão "API", o usuário é levado para a rota `/versao` da aplicação (navegação via React
+- [x] Ao clicar no botão "API", o usuário é levado para a rota `/versao` da aplicação (navegação via React
       Router — `Link` ou `useNavigate` —, sem recarregar a página inteira).
-- [ ] O botão continua respeitando o tema claro/escuro (usa as variáveis `--bg-*`, `--accent-*`, `--text-*`
+- [x] O botão continua respeitando o tema claro/escuro (usa as variáveis `--bg-*`, `--accent-*`, `--text-*`
       já existentes, sem cores fixas incompatíveis com o dark mode).
-- [ ] O tooltip antigo (`.version-tooltip`, com detalhes de ambiente/URL/cache) deixa de ser aberto pelo
+- [x] O tooltip antigo (`.version-tooltip`, com detalhes de ambiente/URL/cache) deixa de ser aberto pelo
       clique no botão, já que essas informações passam a ser exibidas na própria página `/versao`.
 
 ### Rota `/versao` funcional
-- [ ] A rota `/versao` está registrada em `App.jsx` (`<Route path="/versao" element={<VersaoPage />} />`) e
+- [x] A rota `/versao` está registrada em `App.jsx` (`<Route path="/versao" element={<VersaoPage />} />`) e
       renderiza `VersaoPage.jsx` corretamente.
-- [ ] O comportamento já existente da tela de versão (bloco de status da API, botão "Atualizar", bloco de
+- [x] O comportamento já existente da tela de versão (bloco de status da API, botão "Atualizar", bloco de
       erro quando a API está offline — conforme entregue na task 006) continua funcionando normalmente.
 
 ### Botão de voltar na página de versão
-- [ ] Existe um botão/link "Voltar" (ou "← Voltar para o início") na tela `/versao` que retorna o usuário
+- [x] Existe um botão/link "Voltar" (ou "← Voltar para o início") na tela `/versao` que retorna o usuário
       para a página inicial (`/`).
-- [ ] O botão de voltar reaproveita o padrão visual `.back-button` já usado em `About.jsx`, para manter
+- [x] O botão de voltar reaproveita o padrão visual `.back-button` já usado em `About.jsx`, para manter
       consistência entre as páginas internas do app.
-- [ ] A navegação de volta usa o React Router (`Link to="/"`), sem recarregar a aplicação inteira.
+- [x] A navegação de volta usa o React Router (`Link to="/"`), sem recarregar a aplicação inteira.
 
 ### Geral
-- [ ] Nenhuma funcionalidade existente da página principal (lista de tarefas, adicionar/excluir tarefa,
+- [x] Nenhuma funcionalidade existente da página principal (lista de tarefas, adicionar/excluir tarefa,
       toggle de tema, link "Sobre a BIA" no footer) é quebrada pelas alterações.
-- [ ] Testado visualmente em tema claro e escuro.
+- [x] Testado visualmente em tema claro e escuro.
 
 ---
 
