@@ -36,17 +36,17 @@ Adicionar um novo campo na página `/versao` (`client/src/components/VersaoPage.
 ## Critérios de Aceite
 
 ### Exibição do User Agent
-- [ ] Existe um novo campo "User Agent" (ou "Navegador") na página `/versao`.
-- [ ] O campo exibe o valor de `navigator.userAgent` do browser.
-- [ ] O campo está posicionado após os campos já existentes (Versão da API, Status, Ambiente, URL da API).
+- [x] Existe um novo campo "User Agent" (ou "Navegador") na página `/versao`.
+- [x] O campo exibe o valor de `navigator.userAgent` do browser.
+- [x] O campo está posicionado após os campos já existentes (Versão da API, Status, Ambiente, URL da API).
 
 ### Estilo consistente
-- [ ] O campo segue o mesmo padrão visual dos demais campos da página (usa `<strong>` para o label, mesmo espaçamento).
-- [ ] Funciona corretamente em tema claro e escuro.
+- [x] O campo segue o mesmo padrão visual dos demais campos da página (usa `<strong>` para o label, mesmo espaçamento).
+- [x] Funciona corretamente em tema claro e escuro.
 
 ### Sem quebras
-- [ ] Nenhuma funcionalidade existente da página foi quebrada (status, versão, ambiente, URL, botão Atualizar, botão Voltar, bloco de erro).
-- [ ] A aplicação builda sem erros (`docker compose up -d --build`).
+- [x] Nenhuma funcionalidade existente da página foi quebrada (status, versão, ambiente, URL, botão Atualizar, botão Voltar, bloco de erro).
+- [x] A aplicação builda sem erros (`docker compose up -d --build`).
 
 ---
 
