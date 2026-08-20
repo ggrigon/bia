@@ -1,24 +1,60 @@
-No seu trabalho de especificar tarefas, desejo que sempre que for pedido uma nova atividade, o resultado do seu trabalho sera a criacao de um arquivo markdown .md 
+# Especificação do PO — Fluxo de Tarefas
 
-Esse arquivo deve ter o segguinte formato: [025]-[feat]-[resumo].md
+## Criação de Tarefas
+
+Sempre que for pedida uma nova atividade, o resultado será a criação de um arquivo markdown `.md`.
+
+### Formato do arquivo
+`[025]-[feat]-[resumo].md`
+
 Onde:
-- [025] é o número sequencial da tarefa, sempre com 03 dígitos
-    - Esse controle sequencial será feito por um arquivo chamado: sequencial.md
-    - Nesse arquivo será registrada a última task e a numeração da tarefa. Última task: [002]
-        - Você irá usar o sequencial seguinte e incrementar o valor de Última task.
-- [feat] é o tipo da tarefa (pode ser feat, fix test)
-- [resumo] é um resumo curto da tarega, separado por hífens
+- `[025]` — número sequencial da tarefa, sempre com 3 dígitos
+- `[feat]` — tipo da tarefa: `feat`, `fix` ou `test`
+- `[resumo]` — resumo curto da tarefa, separado por hífens
 
-O local que o arquivo deve ser criado será na pasta: desafio01/bia/.kiro/tasks
-- Você também deverá gerenciar o estado desses arquivos criados, ou seja, quando uma tarefa for finalizada você vai mover esse arquivo para uma pasta na mesma folder acima, chamada done.
+### Controle sequencial
+- Gerenciado pelo arquivo `sequencial.md`
+- Nesse arquivo será registrada a última task e a numeração da tarefa
+- Usar sempre o número seguinte ao registrado e incrementar o valor após a criação
 
-
-- Sempre que criar uma nova tarefa, você me sinaliza para que eu possa revisar 
-- Após eu dizer que está ok a revisão você pode perguntar se já pode ser feito o commit e push dela para o repositório remoto (lembre de fazer o commit e push da task e do sequencial).
+### Local de criação
+- Pasta: `.kiro/tasks/`
+- Tarefas finalizadas são movidas para: `.kiro/tasks/done/`
 
 ## Nomenclatura de branch
 
-Toda task criada deve especificar o branch da task no formato: feature/[025]-[feat]-[resumo] —
+Toda task criada deve especificar o branch da task no formato: `feature/[025]-[feat]-[resumo]` —
 ou seja, o mesmo nome do arquivo da task (número sequencial + tipo + resumo), com o prefixo
-obrigatório "feature/". Nunca crie/instrua a criação de um branch de task sem esse prefixo.
+obrigatório `feature/`. Nunca crie/instrua a criação de um branch de task sem esse prefixo.
 
+## Fluxo de Revisão
+
+1. **Criar a tarefa** na pasta `.kiro/tasks/`
+2. **Sinalizar ao usuário** para revisão
+3. **Após aprovação**, perguntar se pode fazer o commit e push (incluir task + sequencial)
+
+## Fluxo de Finalização (após implementação concluída e validada)
+
+### Pré-PR (na branch da feature)
+
+1. **Verificar se está na branch da feature** (`git branch --show-current`)
+2. **Mover o arquivo da task** para a pasta `done/` (`git mv .kiro/tasks/XXX.md .kiro/tasks/done/`)
+3. **Atualizar o `sequencial.md`** se ainda não estiver atualizado
+4. **Fazer commit e push** com a movimentação da task e sequencial
+
+### Abertura do PR
+
+5. **Abrir Pull Request** via `gh pr create --repo ggrigon/bia` com:
+   - **Branch de origem:** `feature/[025]-[feat]-[resumo]`
+   - **Branch de destino:** `desafio-labs/kiro-cli`
+   - **Título:** O mesmo resumo da tarefa em formato legível
+   - **Corpo:** Conteúdo do arquivo da task (descrição, critérios de aceite, etc.)
+6. **Informar o link do PR** ao usuário para revisão final
+
+### Pós-PR (após checks passarem e aprovação)
+
+7. **Aguardar os checks do GitHub Actions passarem** (`gh pr checks <numero> --repo ggrigon/bia`)
+8. **Fazer o merge** via `gh pr merge <numero> --repo ggrigon/bia --merge --delete-branch`
+9. **Confirmar o merge** e informar ao usuário
+
+> **Importante:** A flag `--delete-branch` já remove a branch remota automaticamente. Nunca fazer merge sem antes ter movido a task para `done/`.
