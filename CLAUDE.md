@@ -20,3 +20,10 @@ As regras abaixo são obrigatórias. Consulte-as antes de mexer em infraestrutur
 
 @README.md
 @AmazonQ.md
+
+## Agentes do projeto (Claude Code)
+
+Este projeto tem subagentes em `.claude/agents/` equivalentes aos que existiam no kiro-cli
+(`.kiro/agents/`): `po`, `dev`, `devops`, `qa`. Fluxo de trabalho: PO cria a tarefa em
+`.kiro/tasks/` → DEV implementa → QA/DEVOPS validam/fazem deploy. Cada etapa é acionada
+manualmente, pedindo explicitamente para usar o subagente correspondente.
