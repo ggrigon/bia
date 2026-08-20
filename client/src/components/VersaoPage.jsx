@@ -70,14 +70,16 @@ const VersaoPage = () => {
       clearTimeout(timeoutId);
 
       if (response.ok) {
-        const versionData = await response.json();
-        setApiVersion(versionData);
+        const versionText = await response.text();
+        setApiVersion(versionText);
         setApiStatus('online');
       } else {
+        setApiVersion(null);
         setApiStatus('offline');
         setError(`HTTP ${response.status}: ${response.statusText}`);
       }
     } catch (err) {
+      setApiVersion(null);
       setApiStatus('offline');
       setError(err.name === 'AbortError' ? 'Timeout: API não respondeu em 5s' : err.message);
     }
@@ -114,19 +116,11 @@ const VersaoPage = () => {
       <div className="task" style={{ marginBottom: '0.75rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
           <div>
-            <strong>API — Nome:</strong>{' '}
+            <strong>Versão da API:</strong>{' '}
             {apiStatus === 'checking'
               ? 'Verificando...'
               : apiVersion
-              ? apiVersion.api?.nome
-              : '—'}
-          </div>
-          <div>
-            <strong>API — Versão:</strong>{' '}
-            {apiStatus === 'checking'
-              ? 'Verificando...'
-              : apiVersion
-              ? apiVersion.api?.versao
+              ? apiVersion
               : '—'}
           </div>
           <div>
