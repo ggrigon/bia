@@ -100,10 +100,31 @@ etc.) fica a critério do `dev`, desde que os critérios de aceite abaixo sejam 
 - [x] Nenhuma outra funcionalidade da tela `/versao` (status, ambiente, URL da API, botão
       "Atualizar", bloco de erro) foi quebrada — validado por revisão de diff: nenhum desses
       blocos foi tocado. *Botão "Voltar" não existe nesta branch, ver Notas do Dev.*
-- [ ] Testado com a API online e com a API offline (ex.: backend derrubado), confirmando os dois
-      cenários (sucesso e erro) **na tela**. Não foi possível confirmar visualmente "na tela" —
-      ver Notas do Dev para o que foi de fato validado e o motivo do bloqueio.
-- [ ] Testado visualmente em tema claro e escuro. Não realizado — ver Notas do Dev.
+- [x] Testado com a API online e com a API offline (ex.: backend derrubado), confirmando os dois
+      cenários (sucesso e erro) **na tela**. **Validado manualmente pelo dono do projeto,
+      diretamente no navegador**, após o merge das tasks 007 e 008 em `desafio-labs/kiro-cli`
+      (ver "Validação final (PO)" abaixo) — o dev não conseguiu confirmar isso por falta de
+      navegador/headless no ambiente, ver Notas do Dev.
+- [x] Testado visualmente em tema claro e escuro. **Validado manualmente pelo dono do projeto,
+      diretamente no navegador**, após o merge das tasks 007 e 008 em `desafio-labs/kiro-cli`
+      (ver "Validação final (PO)" abaixo) — não realizado pelo dev, ver Notas do Dev.
+
+---
+
+## Validação final (PO)
+
+Após o merge local de `feature/007-feat-botao-api-padrao-e-voltar-versao` e
+`feature/008-fix-versao-page-parse-texto-plano` em `desafio-labs/kiro-cli` (necessário porque a
+rota `/versao` e o botão "API" do Header, entregues na task 007, são pré-requisito para visualizar
+a correção da task 008 no navegador), o dono do projeto validou manualmente na tela `/versao`:
+
+- Status da API alternando corretamente entre "🟢 Online" e "🔴 Offline" (com o backend
+  online/offline), sem o erro `Unexpected token ... is not valid JSON`.
+- Campo único "Versão da API" exibindo o valor esperado.
+- Tema claro e tema escuro, ambos consistentes com o padrão visual do restante do app.
+
+Com essa validação, os dois critérios de aceite pendentes (marcados `[ ]` na entrega original do
+dev) foram confirmados e marcados como `[x]` acima. Task aceita pelo PO.
 
 ---
 
@@ -154,6 +175,10 @@ funcionalmente contra o backend real, como descrito acima. Recomendo que a valid
 ("na tela", tema claro/escuro) seja feita pelo QA em um ambiente onde a branch `feature/007-...`
 já esteja mesclada em `desafio-labs/kiro-cli` (ou testando as branches 007+008 combinadas), usando
 um navegador real.
+
+> **Atualização do PO:** esse bloqueio foi resolvido — ver seção "Validação final (PO)" acima. O
+> dono do projeto validou manualmente no navegador após o merge das tasks 007 e 008 em
+> `desafio-labs/kiro-cli`.
 
 ---
 
