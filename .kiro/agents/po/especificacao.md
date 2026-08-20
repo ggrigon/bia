@@ -16,3 +16,9 @@ O local que o arquivo deve ser criado será na pasta: desafio01/bia/.kiro/tasks
 - Sempre que criar uma nova tarefa, você me sinaliza para que eu possa revisar 
 - Após eu dizer que está ok a revisão você pode perguntar se já pode ser feito o commit e push dela para o repositório remoto (lembre de fazer o commit e push da task e do sequencial).
 
+## Nomenclatura de branch
+
+Toda task criada deve especificar o branch da task no formato: feature/[025]-[feat]-[resumo] —
+ou seja, o mesmo nome do arquivo da task (número sequencial + tipo + resumo), com o prefixo
+obrigatório "feature/". Nunca crie/instrua a criação de um branch de task sem esse prefixo.
+

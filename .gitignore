@@ -32,3 +32,6 @@ yarn-error.log*
 
 #playwright
 .playwright-mcp/*
+
+# Claude Code (configurações locais/pessoais)
+.claude/settings.local.json
