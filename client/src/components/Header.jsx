@@ -1,17 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { useTheme } from "../contexts/ThemeContext.jsx";
 import VersionInfo from "./VersionInfo";
 
 const Header = ({ title }) => {
   const { isDarkMode, toggleTheme } = useTheme();
-  
+
   return (
     <header className="header">
       <h1>{title}</h1>
       <div className="header-controls">
+        <Link to="/versao" className="btn">API</Link>
         <VersionInfo />
-        <button 
+        <button
           className="theme-toggle" 
           onClick={toggleTheme}
           title={isDarkMode ? "Tema claro" : "Tema escuro"}
