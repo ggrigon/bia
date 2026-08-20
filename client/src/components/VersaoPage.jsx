@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const getApiUrl = () => {
   if (import.meta.env.VITE_API_URL) {
@@ -91,6 +92,12 @@ const VersaoPage = () => {
 
   return (
     <div className="tasks-container">
+      <div style={{ marginBottom: '1rem' }}>
+        <Link to="/" className="back-button">
+          ← Voltar
+        </Link>
+      </div>
+
       <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 style={{ margin: 0 }}>Informações da API</h2>
         <button
