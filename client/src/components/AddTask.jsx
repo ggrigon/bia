@@ -1,9 +1,23 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
 
+const getDataHoje = () => {
+  const hoje = new Date();
+  const ano = hoje.getFullYear();
+  const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  return `${ano}-${mes}-${dia}`;
+};
+
+const formatarDataParaPtBR = (dataISO) => {
+  if (!dataISO) return new Date().toLocaleDateString('pt-BR');
+  const [ano, mes, dia] = dataISO.split('-');
+  return `${dia}/${mes}/${ano}`;
+};
+
 const AddTask = ({ onAdd }) => {
   const [titulo, setTitulo] = useState("");
-  const [dia, setDia] = useState("");
+  const [dia, setDia] = useState(getDataHoje());
   const [importante, setImportante] = useState(true);
   const [showModal, setShowModal] = useState(false);
 
@@ -17,12 +31,12 @@ const AddTask = ({ onAdd }) => {
 
     onAdd({ 
       titulo: titulo.trim(), 
-      dia_atividade: dia || new Date().toLocaleDateString('pt-BR'), 
+      dia_atividade: formatarDataParaPtBR(dia), 
       importante 
     });
 
     setTitulo("");
-    setDia("");
+    setDia(getDataHoje());
     setImportante(true);
   };
 
@@ -41,8 +55,7 @@ const AddTask = ({ onAdd }) => {
       <div className="form-control">
         <label>Data/Prazo</label>
         <input
-          type="text"
-          placeholder="Quando?"
+          type="date"
           value={dia}
           onChange={(e) => setDia(e.target.value)}
         />
