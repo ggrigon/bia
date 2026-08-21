@@ -11,6 +11,7 @@ const Header = ({ title }) => {
     <header className="header">
       <h1>{title}</h1>
       <div className="header-controls">
+        <Link to="/graficos" className="btn">📊</Link>
         <Link to="/versao" className="btn">API</Link>
         <VersionInfo />
         <button

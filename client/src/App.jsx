@@ -9,6 +9,7 @@ import AddTask from "./components/AddTask.jsx";
 import Modal from "./components/Modal.jsx";
 import About from "./components/About.jsx";
 import VersaoPage from "./components/VersaoPage.jsx";
+import Graficos from "./components/Graficos.jsx";
 import DebugLogs from "./components/DebugLogs.jsx";
 
 const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:8080";
@@ -247,6 +248,7 @@ function AppContent() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
             <Route path="/versao" element={<VersaoPage />} />
+            <Route path="/graficos" element={<Graficos />} />
           </Routes>
           <Footer />
         </div>
