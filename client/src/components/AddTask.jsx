@@ -58,7 +58,7 @@ const AddTask = ({ onAdd }) => {
         <label htmlFor="importante">Importante</label>
       </div>
       
-      <button type="submit" className="btn btn-block success">
+      <button type="submit" className="btn btn-block error">
         Adicionar Tarefa
       </button>
       
